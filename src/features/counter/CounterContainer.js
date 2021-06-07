@@ -5,7 +5,7 @@ import "./CounterContainer.css";
 
 function CounterContainer() {
   return (
-    <div className="App">
+    <main className="App">
       <header className="App-header">
         <h1>About</h1>
         <p>
@@ -57,7 +57,7 @@ function CounterContainer() {
           </a>
         </span>
       </header>
-    </div>
+    </main>
   );
 }
 
