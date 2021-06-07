@@ -22,6 +22,8 @@ function AddSong() {
       addSong({
         title: state.title,
         artist: state.artist,
+        genre: state.genre,
+        rating: state.rating,
       })
     );
   };
@@ -50,13 +52,23 @@ function AddSong() {
         value={state.artist.value}
         onChange={handleChange}
       />
-      <select id="genre" name="genre">
+      <select
+        id="genre"
+        name="genre"
+        value={state.genre.value}
+        onChange={handleChange}
+      >
         <option value=""></option>
         <option value="rock">Rock</option>
         <option value="jazz">Jazz</option>
         <option value="pop">Pop</option>
       </select>
-      <select id="rating" name="rating">
+      <select
+        id="rating"
+        name="rating"
+        value={state.rating.value}
+        onChange={handleChange}
+      >
         <option value=""></option>
         <option value="1">1</option>
         <option value="2">2</option>

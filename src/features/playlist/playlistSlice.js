@@ -21,12 +21,23 @@ export const playlistSlice = createSlice({
   name: "playlist",
   initialState,
   reducers: {
-    addSong: (state) => {
-      console.log("addSong");
-      console.log(state);
+    addSong: (state, action) => {
+      // console.log("* addSong (reducer)");
+      // console.log(state);
+      // console.log(action);
+      // console.log(action.payload);
+      const newSong = {
+        id: Date.now(),
+        title: action.payload.title,
+        artist: action.payload.artist,
+        genre: action.payload.genre,
+        rating: action.payload.rating,
+      };
+      state.push(newSong);
     },
+
     removeSong: (state, action) => {
-      console.log("RemoveSong");
+      console.log("* RemoveSong (reducer)");
       return state.filter((song) => song.id !== action.payload.id);
     },
   },
