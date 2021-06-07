@@ -14,10 +14,6 @@ function AddSong() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log("- Title: ", state.title);
-    console.log("- Artist: ", state.artist);
-    console.log("- Genre: ", state.genre);
-    console.log("- Rating: ", state.rating);
     dispatch(
       addSong({
         title: state.title,

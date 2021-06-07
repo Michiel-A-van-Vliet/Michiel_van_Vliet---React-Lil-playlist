@@ -5,14 +5,14 @@ const initialState = [
     id: 0,
     title: "Bohemian Rhapsody",
     artist: "Queen",
-    genre: "Rock",
+    genre: "rock",
     rating: 5,
   },
   {
     id: 1,
     title: "Dancing Queen",
     artist: "Abba",
-    genre: "Pop",
+    genre: "pop",
     rating: 1,
   },
 ];
@@ -22,10 +22,6 @@ export const playlistSlice = createSlice({
   initialState,
   reducers: {
     addSong: (state, action) => {
-      // console.log("* addSong (reducer)");
-      // console.log(state);
-      // console.log(action);
-      // console.log(action.payload);
       const newSong = {
         id: Date.now(),
         title: action.payload.title,
