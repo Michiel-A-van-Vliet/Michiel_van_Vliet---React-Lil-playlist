@@ -1,9 +1,9 @@
 import React from "react";
 import logo from "./logo.svg";
 import { Counter } from "./Counter";
-import "./CounterContainer.css";
+import "./About.css";
 
-function CounterContainer() {
+function About() {
   return (
     <main className="App">
       <header className="App-header">
@@ -61,4 +61,4 @@ function CounterContainer() {
   );
 }
 
-export default CounterContainer;
+export default About;

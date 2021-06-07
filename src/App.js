@@ -1,9 +1,9 @@
 import React from "react";
-import CounterContainer from "./features/counter/CounterContainer.js";
+import About from "./features/about/About.js";
 import "./App.css";
 
 function App() {
-  return <CounterContainer />;
+  return <About />;
 }
 
 export default App;
