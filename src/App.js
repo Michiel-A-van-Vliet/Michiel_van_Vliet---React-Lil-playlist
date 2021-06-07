@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import About from "./features/about/About";
 import Todo from "./features/todo/Todo";
 import Home from "./features/home/Home";
+import Playlist from "./features/playlist/Playlist";
 
 export default function App() {
   return (
@@ -13,6 +14,9 @@ export default function App() {
           <ul>
             <li>
               <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/playlist">Playlist</Link>
             </li>
             <li>
               <Link to="/todo">Todo</Link>
@@ -29,6 +33,9 @@ export default function App() {
         <Switch>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/playlist">
+            <Playlist />
           </Route>
           <Route path="/todo">
             <Todo />
