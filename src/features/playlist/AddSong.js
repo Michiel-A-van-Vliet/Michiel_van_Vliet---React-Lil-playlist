@@ -5,41 +5,52 @@ import { addSong } from "./playlistSlice";
 function AddSong() {
   const dispatch = useDispatch();
 
-  const [title, setTitle] = useState("");
-  const [artist, setArtist] = useState("");
+  const [state, setState] = useState({
+    title: "",
+    artist: "",
+    genre: "",
+    rating: "",
+  });
 
   const onSubmit = (event) => {
-    // de dispatch wordt getriggerd, maar er wordt niks meegezonden.
-    // artist en title lijken niet te werken.
-    // wel invoer mogelijk van artist, niet van title.
-    // nog niks gedaan met genre en rating.
     event.preventDefault();
     console.log("* onSubmit:");
-    console.log("Title: ", title);
-    console.log("Title: ", artist);
+    console.log("- State: ", state);
+    console.log("- Title: ", state.title);
+    console.log("- Artist: ", state.artist);
+    console.log("- Title value: ", state.title.value);
+    console.log("- Artist value: ", state.artist.value);
     dispatch(
       addSong({
-        title: title,
-        artist: artist,
+        title: state.title,
+        artist: state.artist,
       })
     );
+  };
+
+  const handleChange = (event) => {
+    const value = event.target.value;
+    setState({
+      ...state,
+      [event.target.name]: value,
+    });
   };
 
   return (
     <form onSubmit={onSubmit}>
       <input
+        name="title"
         placeholder="Title"
         type="text"
-        value={title}
-        // onderstaande werkt (nog) niet.
-        onChange={(event) => setTitle(event.target.title)}
+        value={state.title.value}
+        onChange={handleChange}
       />
       <input
+        name="artist"
         placeholder="Artist"
         type="text"
-        value={artist}
-        // onderstaande werkt (nog) niet.
-        onChange={(event) => setArtist(event.target.artist)}
+        value={state.artist.value}
+        onChange={handleChange}
       />
       <select id="genre" name="genre">
         <option value=""></option>
