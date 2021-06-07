@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-// import AddSong from "./AddSong";
+import AddSong from "./AddSong";
 import Songlist from "./Songlist";
 
 const Playlist = () => {
@@ -9,7 +9,7 @@ const Playlist = () => {
   return (
     <main>
       <h1>Lil playlist</h1>
-      {/* <AddSong /> */}
+      <AddSong />
       <table style={{ width: "100%" }}>
         <thead>
           <tr className="song-header">
