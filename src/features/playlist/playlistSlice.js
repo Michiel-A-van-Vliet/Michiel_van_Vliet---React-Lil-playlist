@@ -25,14 +25,14 @@ export const playlistSlice = createSlice({
       console.log("addSong");
       console.log(state);
     },
-    removeSong: (state) => {
+    removeSong: (state, action) => {
       console.log("RemoveSong");
-      console.log(state);
+      return state.filter((song) => song.id !== action.payload.id);
     },
   },
 });
 
-export const songsList = (state) => state.playlist.songs;
+export const songsList = (state) => state.playlist;
 
 export const { addSong, removeSong } = playlistSlice.actions;
 
